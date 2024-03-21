@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package shop;
+option go_package="./shop";
+
+message  ProductInfo{
+    int64  ID        = 10;
+    string NameGoods = 20;
+    string Price     = 30;
+    int64  Stock     = 40;
+    string Image     = 50;
+    string TypeGoods = 60;
+}
+
+
+
+message CreateProductRequest {
+   ProductInfo Info = 10;
+}
+
+message CreateProductResponse {
+  ProductInfo Info = 10;
+}
+
+
+message UpdateProductRequest{
+  ProductInfo Info = 10;
+}
+
+message UpdateProductResponse{
+  ProductInfo Info = 10;
+}
+
+
+message GetProductsRequest{
+    int64 Offset = 10;
+    int64 Limit  = 20;
+}
+
+message GetProductsResponse{
+ repeated ProductInfo Info = 10;
+}
+
+
+message GetProductIDInfoRequest{
+  int64 ID = 10;
+}
+
+message GetProductIDInfoResponse{
+  ProductInfo Info = 10;
+}
+
+
+message DeleteProductRequest{
+  int64 ID = 10;
+}
+
+message DeleteProductResponse{}
+
+service Shop {
+  rpc CreateProduct(CreateProductRequest) returns(CreateProductResponse);
+  rpc UpdateProduct(UpdateProductRequest) returns(UpdateProductResponse);
+  rpc GetProducts(GetProductsRequest) returns(GetProductsResponse);
+  rpc GetProductIDInfo(GetProductIDInfoRequest) returns(GetProductIDInfoResponse);
+  rpc DeleteProduct(DeleteProductRequest) returns(DeleteProductResponse);
+}
