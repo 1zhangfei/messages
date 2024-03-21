@@ -1,4 +1,4 @@
-module zg6/weekone/dayOne/message
+module github.com/1zhangfei/messages
 
 go 1.21.4
 
