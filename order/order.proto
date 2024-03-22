@@ -7,9 +7,10 @@ message OrderInfo{
    int64  ID          = 10;
    int64  UserId      = 20;
    int64  GoodsId     = 30;
-   string Total       = 40;
-   string OrderNumber = 50;
-   int64  Status      = 60;
+   string Sum         = 40;
+   int64  Total       = 50;
+   string OrderNumber = 60;
+   int64  Status      = 70;
 }
 
 
