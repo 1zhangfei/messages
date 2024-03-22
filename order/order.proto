@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package order;
+option go_package="./order";
+
+message OrderInfo{
+   int64  ID          = 10;
+   int64  UserId      = 20;
+   int64  GoodsId     = 30;
+   string Total       = 40;
+   string OrderNumber = 50;
+   int64  Status      = 60;
+}
+
+
+message CreateOrderRequest {
+   OrderInfo Info = 10;
+}
+
+message CreateOrderResponse {
+   OrderInfo Info = 10;
+}
+
+
+message UpdateOrderRequest{
+  OrderInfo Info = 10;
+}
+
+message UpdateOrderResponse{
+  OrderInfo Info = 10;
+}
+
+
+message GetOrderInfoRequest{
+  OrderInfo Info = 10;
+}
+
+message GetOrderInfoResponse{
+  OrderInfo Info = 10;
+}
+
+
+message DeleteOrderRequest{
+  OrderInfo Info = 10;
+}
+
+message DeleteOrderResponse{
+  OrderInfo Info = 10;
+}
+
+
+service Order {
+  rpc CreateOrder(CreateOrderRequest) returns(CreateOrderResponse);
+  rpc UpdateOrder(UpdateOrderRequest) returns(UpdateOrderResponse);
+  rpc GetOrderInfo(GetOrderInfoRequest) returns(GetOrderInfoResponse);
+  rpc DeleteOrder (DeleteOrderRequest) returns(DeleteOrderResponse);
+}
